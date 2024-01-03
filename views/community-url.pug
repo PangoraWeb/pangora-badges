@@ -1,0 +1,56 @@
+doctype html 
+html(lang='en')
+  head
+    title #{name} Badges
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css')
+
+    script(type="text/javascript" src='https://unpkg.com/htmx.org@1.9.9' defer)
+    script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/toastify-js' defer)
+    script(type="text/javascript" src='/js/badges.js' defer)
+    script(type="text/javascript" src='/js/particles.min.js' defer)
+    script(type="text/javascript" src='/js/app.js' defer)
+  
+  body
+    include partials/nav.pug
+    #content
+      #particles-js
+      .page-content
+        h1.badge-page-title #{name} Badges
+        p(style="text-align:center;") Various badges for showing off your #{name} stats!
+        p(style="text-align:center;color:#919191") Style them using the boxes below and then copy the markdown to your site description
+        p(style="text-align:center;color:#919191") Some badges might be a little broken due to me mass putting them here but will be fine after being copied
+        include partials/label-form.pug
+        - var path = `/api/v1/community/name/${url}`
+        - var alt = `Community Name`
+        include partials/badge.pug
+        - var path = `/api/v1/community/title/${url}`
+        - var alt = `Community Title`
+        include partials/badge.pug
+        - var path = `/api/v1/community/posts/${url}`
+        - var alt = `Post Count`
+        include partials/badge.pug
+        - var path = `/api/v1/community/comments/${url}`
+        - var alt = `Comment Count`
+        include partials/badge.pug
+        - var path = `/api/v1/community/subscribers/${url}`
+        - var alt = `Subscribers`
+        include partials/badge.pug
+        - var path = `/api/v1/community/users-active-day/${url}`
+        - var alt = `Daily Active User Count`
+        include partials/badge.pug
+        - var path = `/api/v1/community/users-active-week/${url}`
+        - var alt = `Weekly Active User Count`
+        include partials/badge.pug
+        - var path = `/api/v1/community/users-active-month/${url}`
+        - var alt = `Monthly Active User Count`
+        include partials/badge.pug
+        - var path = `/api/v1/community/users-active-half-year/${url}`
+        - var alt = `Half-Yearly Active User Count`
+        include partials/badge.pug
+        - var path = `/api/v1/community/is-nsfw/${url}`
+        - var alt = `Is NSFW`
+        include partials/badge.pug
+        - var path = `/api/v1/community/is-posting-restricted/${url}`
+        - var alt = `Is Posting Restricted`
+        include partials/badge.pug

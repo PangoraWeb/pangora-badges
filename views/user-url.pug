@@ -1,0 +1,45 @@
+doctype html 
+html(lang='en')
+  head
+    title #{name} Badges
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css')
+
+    script(type="text/javascript" src='https://unpkg.com/htmx.org@1.9.9' defer)
+    script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/toastify-js' defer)
+    script(type="text/javascript" src='/js/badges.js' defer)
+    script(type="text/javascript" src='/js/particles.min.js' defer)
+    script(type="text/javascript" src='/js/app.js' defer)
+  
+  body
+    include partials/nav.pug
+    #content
+      #particles-js
+      .page-content
+        h1.badge-page-title #{name} Badges
+        p(style="text-align:center;") Various badges for showing off your #{name} stats!
+        p(style="text-align:center;color:#919191") Style them using the boxes below and then copy the markdown to your site description
+        p(style="text-align:center;color:#919191") Some badges might be a little broken due to me mass putting them here but will be fine after being copied
+        include partials/label-form.pug
+        - var path = `/api/v1/user/name/${url}`
+        - var alt = `Name`
+        include partials/badge.pug
+        - var path = `/api/v1/user/display-name/${url}`
+        - var alt = `Display Name`
+        include partials/badge.pug
+        - var path = `/api/v1/user/matrix/${url}`
+        - var alt = `Matrix`
+        include partials/badge.pug
+        - var path = `/api/v1/user/comments/${url}`
+        - var alt = `Comment Count`
+        include partials/badge.pug
+        - var path = `/api/v1/user/posts/${url}`
+        - var alt = `Post Count`
+        include partials/badge.pug
+        - var path = `/api/v1/user/is-admin/${url}`
+        - var alt = `Is Admin`
+        include partials/badge.pug
+        - var path = `/api/v1/user/is-bot/${url}`
+        - var alt = `Is Bot`
+        include partials/badge.pug
+        

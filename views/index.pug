@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  head
+    title Pangora Badges
+    link(rel='stylesheet', href='/css/style.css')
+
+    script(type="text/javascript" src='/js/particles.min.js' defer)
+    script(type="text/javascript" src='/js/app.js' defer)
+  
+  body
+    include partials/nav.pug
+    #content
+      #particles-js
+      main.center.spread
+        h1 BADGES
+        p Create badges to display stats for your site, community or user!
+        .main-buttons
+          a(href='/site') Site Badge
+          a(href='/community') Community Badge
+          a(href='/user') User Badge

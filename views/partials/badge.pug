@@ -1,0 +1,13 @@
+.badge-wrapper
+  if link
+    a(href=`${link}`)
+      div(hx-get=`${path}` hx-trigger='load')
+        p Loading...
+  else
+    div(hx-get=`${path}` hx-trigger='load')
+      p Loading...
+  p.label #{alt}
+  .badge-buttons
+    button(onClick=`copyLink('${path}', '${alt}')`) Copy Link
+    button(onClick=`copyMarkdown('${path}', '${alt}', '${link}')`) Copy Markdown
+    button(onClick=`copyHTML('${path}', '${alt}', '${link}')`) Copy HTML

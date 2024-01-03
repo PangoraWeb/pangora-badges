@@ -1,0 +1,18 @@
+doctype html 
+html(lang='en')
+  head
+    title Site Badges
+    link(rel='stylesheet', href='/css/style.css')
+
+    script(type="text/javascript" src='/js/particles.min.js' defer)
+    script(type="text/javascript" src='/js/app.js' defer)
+
+  body
+    include partials/nav.pug
+    #content
+      #particles-js
+      main.center.spread
+        h1 Error Finding Entity
+        p Make sure you spelled the entity correctly and that it exists!
+        .back
+          <button onclick="window.history.back();">Back</button>

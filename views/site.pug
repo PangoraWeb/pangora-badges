@@ -1,0 +1,21 @@
+doctype html 
+html(lang='en')
+  head
+    title Site Badges
+    link(rel='stylesheet', href='/css/style.css')
+
+    script(type="text/javascript" src='/js/particles.min.js' defer)
+    script(type="text/javascript" src='/js/app.js' defer)
+
+  body
+    include partials/nav.pug
+    #content
+      #particles-js
+      main.center.spread
+        h1 Site Badge Creation
+        p Create badges to display site stats!
+        form(action='/site', method='post')
+          .input
+            label(for='site') Site Domain
+            input(type='text', id='site', name='site', placeholder='programming.dev' required)
+          button(type='submit') Submit

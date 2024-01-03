@@ -1,0 +1,24 @@
+doctype html 
+html(lang='en')
+  head
+    title Site Badges
+    link(rel='stylesheet', href='/css/style.css')
+
+    script(type="text/javascript" src='/js/particles.min.js' defer)
+    script(type="text/javascript" src='/js/app.js' defer)
+
+  body
+    include partials/nav.pug
+    #content
+      #particles-js
+      main.center.spread
+        h1 Community Badge Creation
+        p Create badges to display community stats!
+        form(action='/community', method='post')
+          .input
+            label(for='site') Community name
+            input(type='text', id='community', name='community', placeholder='programming' required)
+          .input
+            label(for='site') Site domain
+            input(type='text', id='site', name='site', placeholder='programming.dev' required)
+          button(type='submit') Submit
