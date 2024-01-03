@@ -480,9 +480,11 @@ select {
   }
 }
 
-/* =============================================================================
-   CUSTOM
-   ========================================================================== */
+.spread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .center {
   position: absolute;
@@ -492,6 +494,10 @@ select {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/* =============================================================================
+   CUSTOM
+   ========================================================================== */
 
 .coming-soon {
   display: flex;
@@ -504,12 +510,6 @@ select {
   p:nth-child(2) {
     color: #606060;
   }
-}
-
-.spread {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
 .main-buttons {
