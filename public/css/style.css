@@ -107,6 +107,7 @@ input:focus {
    ========================================================================== */
 
 body {
+  background-color: #000000;
   background-image: linear-gradient(
     to top right,
     rgb(3, 17, 23),
