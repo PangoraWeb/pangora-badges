@@ -1,5 +1,5 @@
 function copyLink(path, alt) {
-  navigator.clipboard.writeText(`http://localhost:3006${path}`);
+  navigator.clipboard.writeText(`https://badges.pangora.social${path}`);
   Toastify({
     text: `${alt} Link copied to clipboard!`,
     duration: 3000,
@@ -16,10 +16,12 @@ function copyLink(path, alt) {
 function copyMarkdown(path, alt, link) {
   if (link && link != "undefined") {
     navigator.clipboard.writeText(
-      `[![${alt}](http://localhost:3006${path})](${link})`
+      `[![${alt}](https://badges.pangora.social${path})](${link})`
     );
   } else {
-    navigator.clipboard.writeText(`![${alt}](http://localhost:3006${path})`);
+    navigator.clipboard.writeText(
+      `![${alt}](https://badges.pangora.social${path})`
+    );
   }
 
   Toastify({
@@ -38,11 +40,11 @@ function copyMarkdown(path, alt, link) {
 function copyHTML(path, alt, link) {
   if (link && link != "undefined") {
     navigator.clipboard.writeText(
-      `<a href="${link}"><img src="http://localhost:3006${path}" alt="${alt}"></a>`
+      `<a href="${link}"><img src="https://badges.pangora.social${path}" alt="${alt}"></a>`
     );
   } else {
     navigator.clipboard.writeText(
-      `<img src="http://localhost:3006${path}" alt="${alt}">`
+      `<img src="https://badges.pangora.social${path}" alt="${alt}">`
     );
   }
 
