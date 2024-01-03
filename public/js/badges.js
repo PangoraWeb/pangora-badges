@@ -14,12 +14,12 @@ function copyLink(path, alt) {
 }
 
 function copyMarkdown(path, alt, link) {
-  if (link) {
+  if (link && link != "undefined") {
     navigator.clipboard.writeText(
       `[![${alt}](http://localhost:3006${path})](${link})`
     );
   } else {
-    navigator.clipboard.writeText(`![${alt}](http://localhost:3006${path})]`);
+    navigator.clipboard.writeText(`![${alt}](http://localhost:3006${path})`);
   }
 
   Toastify({
@@ -36,7 +36,7 @@ function copyMarkdown(path, alt, link) {
 }
 
 function copyHTML(path, alt, link) {
-  if (link) {
+  if (link && link != "undefined") {
     navigator.clipboard.writeText(
       `<a href="${link}"><img src="http://localhost:3006${path}" alt="${alt}"></a>`
     );
