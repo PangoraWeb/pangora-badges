@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "commander": "^11.1.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "pug": "^3.0.2",
     "sublinks-js-client": "^0.0.3"

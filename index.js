@@ -5,10 +5,12 @@ import site from "./routes/site.js";
 import community from "./routes/community.js";
 import user from "./routes/user.js";
 import { Command } from "commander";
+import cors from "cors";
 
 const app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 const program = new Command();
 
 // ---
